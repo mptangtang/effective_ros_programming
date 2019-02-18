@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<launch>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find chapter10)/rviz/pcl_display.rviz"/>
+    <node name="pcl_create" pkg="chapter10" type="pcl_create"/>
+    <node name="odom" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 1 world odom 10" />
+</launch>

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+
+<launch>
+    <node name="pcl_read" pkg="chapter10" type="pcl_read"/>
+    <node name="pcl_visualize2" pkg="chapter10" type="pcl_visualize2" output="screen"/>
+</launch>

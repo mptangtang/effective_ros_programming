@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+        <node name ="chap5_user_odometry" pkg="chapter5" type="user_odometry" output="screen"/>
+
+        <arg name="model" default="$(find chapter5)/urdf/robot2.urdf" />
+        <arg name="gui" default="False" />
+
+        <param name="robot_description" textfile="$(arg model)" />
+        <param name="use_gui" value="$(arg gui)"/>
+
+        <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node>
+        <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+
+        <node name="rviz" pkg="rviz" type="rviz" args="-d $(find chapter5)/rviz/odom_cfg.rviz"/>
+        <node name="base_link" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 1 base_link my_frame 10" />
+</launch>

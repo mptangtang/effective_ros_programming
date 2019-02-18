@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+        <node name ="chap5_user_laser" pkg="chapter5" type="laser" output="screen"/>
+        <node name="rviz" pkg="rviz" type="rviz" args="-d $(find chapter5)/rviz/laser_cfg.rviz" />
+        <node name="base_link" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 1 base_link my_frame 10" />
+</launch>

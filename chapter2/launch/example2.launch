@@ -1,0 +1,4 @@
+<launch>
+    <node name ="chap2_example2_a" pkg="chapter2" type="example2_a" output="screen"/>
+    <node name ="chap2_example2_b" pkg="chapter2" type="example2_b" output="screen" args="3 5 7"/>
+</launch>
